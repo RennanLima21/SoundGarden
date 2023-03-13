@@ -1,7 +1,7 @@
 export const BASE_URL = 'https://soundgarden-api.vercel.app/';
 
-export const getApiData = async ({ pathUrl }) => {
-  const URL = pathUrl ? `${BASE_URL}/${pathUrl}` : BASE_URL; // ternário
+export async function getApiData({ pathUrl }) {
+  const URL = pathUrl ? `${BASE_URL}/${pathUrl}` : BASE_URL; // ternario__(Verdae_?)__(Falso_:)
 
   const response = await fetch(URL, {
     method: 'GET',
@@ -11,7 +11,8 @@ export const getApiData = async ({ pathUrl }) => {
   return await response.json();
 };
 
-export const postApiData = async ({ pathUrl, body }) => {
+/* pathUrl, body (tranformado os argumentos em  {Objeto} para organizar a exibição de acordo com sua necessidade) */
+export async function postApiData({ pathUrl, body }) {
   const URL = pathUrl ? `${BASE_URL}${pathUrl}` : BASE_URL;
 
   const response = await fetch(URL, {
@@ -23,8 +24,8 @@ export const postApiData = async ({ pathUrl, body }) => {
   return await response.json();
 };
 
-export const putApiData = async ({ pathUrl, body }) => {
-  const URL = pathUrl ? `${BASE_URL}${pathUrl}` : BASE_URL;
+export async function putApiData ({ pathUrl, id, body }) {
+  const URL = pathUrl && id ? `${BASE_URL}${pathUrl}/${id}` : BASE_URL;
 
   const response = await fetch(URL, {
     method: 'PUT',
