@@ -1,4 +1,4 @@
-/* Local hoste da API */
+/* Local hoste da API  "JS USANDO UM HOST"*/
 import { postApiData } from "./host.js";
 const BASE_URL = "https://soundgarden-api.vercel.app/events";
 
