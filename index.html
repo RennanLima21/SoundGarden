@@ -9,6 +9,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="modal.css">
 </head>
 
 <body>
@@ -33,7 +34,7 @@
                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Porro aperiam sunt quo similique,
                         dolorum consectetur inventore ipsam, officiis neque natus eius harum alias quidem. Possimus
                         nobis in inventore tenetur asperiores.</p>
-                    <a href="#" class="btn btn-primary">reservar ingresso</a>
+                    <a href="#" class="btn btn-primary" class="test">reservar ingresso</a>
                 </article>
                 <article class="evento card p-5 m-3">
                     <h2>nome do evento - 05/03/2022</h2>
@@ -41,7 +42,7 @@
                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Porro aperiam sunt quo similique,
                         dolorum consectetur inventore ipsam, officiis neque natus eius harum alias quidem. Possimus
                         nobis in inventore tenetur asperiores.</p>
-                    <a href="#" class="btn btn-primary">reservar ingresso</a>
+                    <a href="#" class="btn btn-primary" class="test">reservar ingresso</a>
                 </article>
                 <article class="evento card p-5 m-3">
                     <h2>nome do evento - 05/03/2022</h2>
@@ -49,7 +50,7 @@
                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Porro aperiam sunt quo similique,
                         dolorum consectetur inventore ipsam, officiis neque natus eius harum alias quidem. Possimus
                         nobis in inventore tenetur asperiores.</p>
-                    <a href="#" class="btn btn-primary">reservar ingresso</a>
+                    <a href="#" class="btn btn-primary" class="test">reservar ingresso</a>
                 </article>
             </div>
             <div class="container text-center">
@@ -86,6 +87,18 @@
             </div>
         </section>
 
+        <div id="fade" class="hide"></div>
+        <form id="modal" class="hide" action="">
+            <h1>Finalize sua reserva</h1>
+            <label for="">Digite seu nome:</label><br>
+            <input type="text" id="fname" name="fname" value=""><br><br>
+            <span id="msg-vld-lname" style="color: red; display:none"></span>
+            <label for="">Digite seu e-mail:</label><br>
+            <input type="text" id="femail" name="femail" value=""><br><br>
+            <span id="msg-vld-lemail" style="color: red; display:none"></span>
+            <button id="close-modal">Fechar</button>
+            <input id='enviar' type="submit" value="Enviar">
+        </form>
     </main>
     <footer>
         <div class="container d-flex justify-content-center align-items-center">
@@ -105,6 +118,7 @@
         </div>
     </footer>
     <script type="module" src="./js/index.js"></script>
+    <script src="./reservaringresso-index.js"></script>
 </body>
 
 </html>
