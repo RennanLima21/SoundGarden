@@ -25,13 +25,7 @@ responseEvents.forEach((item) => {
         }" class="btn btn-secondary">editar</a>
         <a href="excluir-evento.html?id=${
           item._id
-        }" class="btn btn-danger2">excluir</a>
+        }" class="btn btn-danger">excluir</a>
     </td>
 </tr>`;
 });
-
-/* let isoDate = "2013-03-10T02:00:00Z";
-var d = new Date(isoDate);
-d.toLocaleDateString("en-GB"); // dd/mm/yyyy
-d.toLocaleDateString("en-US"); // mm/dd/yyyy
- */
