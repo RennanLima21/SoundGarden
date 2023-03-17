@@ -11,7 +11,7 @@ export async function getApiData({ pathUrl }) {
 
   return await response.json();
 }
-/* GET byID */
+/* GET byID */ //bookings/event/:eventID
 export async function getById({ pathUrl, id }) {
   const URL = pathUrl ? `${BASE_URL}${pathUrl}/${id}` : BASE_URL; // ternario__(Verdae_?)__(Falso_:)
 
