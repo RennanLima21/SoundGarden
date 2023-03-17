@@ -79,3 +79,33 @@ enviar.onclick = function(event){
 
 
 
+
+
+const formEl = document.querySelector("#modal");
+
+const endpoint = 'https://soundgarden-api.vercel.app/bookings';
+
+formEl.addEventListener("submit", async event => {
+        event.preventDefault();
+    
+        const unReserva = {
+           name: fname.value,
+           email: femail.value
+        };
+    
+        const response = await fetch(endpoint, {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(unReserva)
+        });
+    
+        const data = await response.json();
+    
+        console.log(data)
+    })
+
+
+
+
