@@ -14,7 +14,7 @@ let startReserve1 = document.getElementsByClassName("btn btn-primary")[1];
 let startReserve2 = document.getElementsByClassName("btn btn-primary")[2];
 
 
-[startReserve0, startReserve1, startReserve2, closeModalButton].forEach((el) => {
+[startReserve0, startReserve1, startReserve2].forEach((el) => {
     el.addEventListener("click", () => toggleModal())
 })
 
@@ -68,3 +68,33 @@ enviar.onclick = function(event){
         event.preventDefault();
 }
 }
+
+
+
+
+
+const formEl = document.querySelector("#modal");
+
+const endpoint = 'https://soundgarden-api.vercel.app/bookings';
+
+formEl.addEventListener("submit", async event => {
+        event.preventDefault();
+    
+        const unReserva = {
+           name: fname.value,
+           email: femail.value
+        };
+    
+        const response = await fetch(endpoint, {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(unReserva)
+        });
+    
+        const data = await response.json();
+    
+        console.log(data)
+    })
+
