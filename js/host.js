@@ -10,7 +10,6 @@ export async function getApiData({ pathUrl }) {
   });
 
   return await response.json();
-
 }
 /* GET byID */
 export async function getById({ pathUrl, id }) {
@@ -38,7 +37,7 @@ export async function postApiData({ pathUrl, body }) {
   return await response.json();
 }
 
-//VERIFICAR
+
 /* Const para PUT (editar evento) VER SE ESTA CERTA */
 export async function putApiData({ pathUrl, id, body }) {
   const URL = pathUrl && id ? `${BASE_URL}${pathUrl}/${id}` : BASE_URL;
@@ -52,15 +51,14 @@ export async function putApiData({ pathUrl, id, body }) {
   return await response.json();
 }
 
-//VERIFICAR
+
 /* Const para DELETE (deletar evento)  VER SE ESTA CERTA */
-export async function deleteApiData({ pathUrl, id, body }) {
+export async function deleteApiData({ pathUrl, id }) {
   const URL = pathUrl && id ? `${BASE_URL}${pathUrl}/${id}` : BASE_URL;
 
-  const response = await fetch(URL, {
+  return await fetch(URL, {
     method: "DELETE",
     headers: { "Content-Type": "application/json" },
   });
 
-  return await response.json();
 }
