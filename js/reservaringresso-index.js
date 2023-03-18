@@ -1,26 +1,19 @@
-const modal = document.querySelector("#modal")
-const fade = document.querySelector("#fade")
-let closeModalButton = document.querySelector("#close-modal");
+const modal = document.querySelector("#modal");
+const fade = document.querySelector("#fade");
+const btnCloseModal = document.querySelectorAll("#close-modal");
+const btnReservar = document.querySelectorAll(".btn-primary");
 
 const toggleModal = () => {
-    modal.classList.toggle("hide")
-    fade.classList.toggle("hide")
-}
+  modal.classList.toggle("hide");
+  fade.classList.toggle("hide");
+};
 
-let startReserve0 = document.getElementsByClassName("btn btn-primary")[0];
-
-let startReserve1 = document.getElementsByClassName("btn btn-primary")[1];
-
-let startReserve2 = document.getElementsByClassName("btn btn-primary")[2];
-
-
-[startReserve0, startReserve1, startReserve2].forEach((el) => {
-    el.addEventListener("click", () => toggleModal())
-})
-
-
-
-
+btnReservar.forEach((el) => {
+  el.addEventListener("click", () => toggleModal());
+});
+btnCloseModal.forEach((el) => {
+  el.addEventListener("click", () => toggleModal());
+});
 
 let fname = document.getElementById('fname')
 let femail = document.getElementById('femail')
