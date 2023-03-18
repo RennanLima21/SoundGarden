@@ -6,8 +6,6 @@ const tabela = document.querySelector("tbody");
 
 const responseEvents = await getApiData({ pathUrl: "events" });
 const responseBookings = await getApiData({ pathUrl: "bookings" });
-console.log(responseEvents);
-console.log(responseBookings);
 
 responseEvents.forEach((item) => {
   tabela.innerHTML += `<tr>

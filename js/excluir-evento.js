@@ -12,7 +12,6 @@ const inputLotacao = document.querySelector("#lotacao");
 const id = new URLSearchParams(window.location.search).get("id");
 
 const response = await getById({ pathUrl: "events", id: id });
-console.log(response);
 
 inputNome.value = response.name;
 inputPoster.value = response.poster;
@@ -25,7 +24,7 @@ form.onsubmit = async (event) => {
   event.preventDefault();
 
   const response = await deleteApiData({ pathUrl: "events", id: id });
-  console.log(response);
+
   if (response.status == 204) {
     alert("Evento excluido com sucesso!!");
     window.location.href =

@@ -10,11 +10,11 @@ const inputDescricao = document.querySelector("#descricao");
 const inputData = document.querySelector("#data");
 const inputLotacao = document.querySelector("#lotacao");
 
-const id = new URLSearchParams(window.location.search).get("id"); //capturando o id do link
-console.log(id);
+const id = new URLSearchParams(window.location.search).get("id");
+
 
 const response = await getById({ pathUrl: "events", id: id });
-console.log(response);
+
 
 inputNome.value = response.name;
 inputPoster.value = response.poster;
