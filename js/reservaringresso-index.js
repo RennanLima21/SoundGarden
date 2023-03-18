@@ -72,6 +72,7 @@ enviar.onclick = function(event){
 
 
 
+//USO DA API PARA RESERVAS
 
 const formEl = document.querySelector("#modal");
 
@@ -82,7 +83,8 @@ formEl.addEventListener("submit", async event => {
     
         const unReserva = {
            name: fname.value,
-           email: femail.value
+           email: femail.value,
+           ingressos: fingresso.value
         };
     
         const response = await fetch(endpoint, {
@@ -97,4 +99,8 @@ formEl.addEventListener("submit", async event => {
     
         console.log(data)
     })
+
+
+
+
 

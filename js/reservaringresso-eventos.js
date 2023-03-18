@@ -1,3 +1,8 @@
+//PEGA INFORMAÇÕES DA BIBLIOTECA HOST
+import { postApiData } from "./host.js";
+
+
+//MODAL
 const modal = document.querySelector("#modal")
 const fade = document.querySelector("#fade")
 let closeModalButton = document.querySelector("#close-modal");
@@ -29,6 +34,7 @@ let startReserve5 = document.getElementsByClassName("btn btn-primary")[5];
 
 let fname = document.getElementById('fname');
 let femail = document.getElementById('femail');
+let ingressos = document.querySelector('fingresso')
 let enviar = document.getElementById('enviar');
 let form = document.getElementById('modal')
 
@@ -75,37 +81,4 @@ enviar.onclick = function(event){
         event.preventDefault();
 }
 }
-
-
-
-
-
-
-const formEl = document.querySelector("#modal");
-
-const endpoint = 'https://soundgarden-api.vercel.app/bookings';
-
-formEl.addEventListener("submit", async event => {
-        event.preventDefault();
-    
-        const unReserva = {
-           name: fname.value,
-           email: femail.value
-        };
-    
-        const response = await fetch(endpoint, {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify(unReserva)
-        });
-    
-        const data = await response.json();
-    
-        console.log(data)
-    })
-
-
-
 
